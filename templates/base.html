@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    {% include "head.html" %}
+    <head><link rel="stylesheet" href="{{url_for('static', filename = 'CSS/admin.css')}}"></head>
+</head>
+<body>
+    <header>
+        <h1>Skalad Poemas</h1>
+        
+        <nav>
+            <a href="{{url_for('index')}}">Inicio</a>
+            <a href="{{url_for('more')}}">Más poemas</a>
+            <a href="#">Contácto</a>
+            <a href="#">Mí libro</a>
+        </nav>
+            
+    </header>
+
+    {% block contenido %}{% endblock %}
+
+    {% include "footer.html" %}
+</body>
+</html>

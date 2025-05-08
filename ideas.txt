@@ -1,0 +1,13 @@
+@app.route('/')
+def index():
+    conn = sqlite3.connect("poemas.db")
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM poemas ORDER BY id DESC LIMIT 3")
+    poemas = cur.fetchall()
+    conn.close()
+    return render_template('index.html', poemas=poemas)
+
+
+import secrets
+app.secret_key = secrets.token_hex(16) 

@@ -1,0 +1,45 @@
+.containerh2{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: monospace;
+    font-size: 1.5em;
+}
+
+.poemas{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap; /* permite que se acomode en móviles */
+    padding: 2rem;
+  }
+
+.poema {
+    background-color: #fdfdfd;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    width: 300px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    user-select: none;
+}
+
+.poema:hover {
+    transform: scale(1.02);
+  }
+.poema:focus{
+    border: 2px solid #156bc6;
+}
+
+.poema h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+  
+.poema a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #0066cc;
+    text-decoration: none;
+}
