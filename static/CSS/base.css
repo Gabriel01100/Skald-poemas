@@ -1,6 +1,7 @@
 /* Header */
 body{
-    background-color: #3ba29e;
+    background-color:#fce6c2;
+    color: #1e1e1e;
 }
 *{
     margin: 0;
@@ -10,10 +11,11 @@ body{
 
 header{
     margin: 0;
-    background-image: url('../IMG/banner.jpg');
-    height: 25em;
+    background-image: url('../IMG/sol.jpg');
+    height: 30em;
     background-size:cover;
-    background-position:top;
+    background-position:center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content:center;
     gap: 500px;
@@ -41,7 +43,9 @@ a{
     transition: .5s;
     background-color: #808b96;
 }
-
+.principal{
+    color: 	#f59b42;
+}
 /* HOVER */
 
 a:hover{

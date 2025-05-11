@@ -15,7 +15,7 @@
   }
 
 .poema {
-    background-color: #fdfdfd;
+    background-color:#dfeaf4;
     border: 1px solid #ccc;
     padding: 1rem;
     width: 300px;
@@ -24,7 +24,9 @@
     transition: transform 0.2s ease;
     user-select: none;
 }
-
+.poema {
+  white-space: pre-line;
+}
 .poema:hover {
     transform: scale(1.02);
   }
