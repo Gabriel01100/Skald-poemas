@@ -17,8 +17,7 @@ header{
     background-position:center;
     background-repeat: no-repeat;
     display: flex;
-    justify-content:center;
-    gap: 500px;
+    justify-content:space-between;
     font-family: monospace;
     
 }
@@ -32,7 +31,7 @@ nav{
     padding: 15px 10px;
 }
 
-a{
+.link{
     color: #000;
     text-decoration: none;
     font-size: 1.5em;
@@ -48,7 +47,7 @@ a{
 }
 /* HOVER */
 
-a:hover{
+.link:hover{
     font-size: 1.9em;
     background-color: #d5d8dc ;
 }
@@ -60,6 +59,7 @@ a:hover{
     text-align: center;
 }
 
-p{
-    font-family: 'Baskerville:italic';
+p {
+    font-family: 'Baskerville', serif;
+    font-style: italic;
 }

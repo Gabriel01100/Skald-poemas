@@ -30,7 +30,7 @@
     <article class="poema">
       <h2>{{ poema.titulo }}</h2>
       <p>{{poema.contenido}}</p>
-      <form action="{{ url_for('eliminar_poema', id=poema.id) }}" method="POST" style="display:inline;">
+      <form action="{{ url_for('poemas.eliminar', id=poema.id) }}" method="POST" style="display:inline;">
         <button type="submit" onclick="return confirm('¿Estás seguro que querés eliminar este poema?')">Eliminar</button>
     </form>
     </article>

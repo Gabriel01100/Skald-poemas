@@ -2,8 +2,8 @@
 
 {% block contenido %}
 
-<form method="GET" action="{{ url_for('more') }}">
-  <label for="filtro_etiqueta">Filtrar por etiqueta:</label>
+<form method="GET" action="{{ url_for('poemas.more') }}">
+  <label class="etiqueta" for="filtro_etiqueta">Filtrar por etiqueta:</label>
   <select name="etiqueta" id="filtro_etiqueta" onchange="this.form.submit()">
     <option value="">-- Todas --</option>
     {% for etiqueta in etiquetas %}
@@ -20,10 +20,10 @@
         {{ poema.contenido[:200] }}{% if poema.contenido|length > 200 %}...{% endif %}
       </p>
       {% if poema.contenido|length > 200 %}
-        <button onclick="mostrarPoema({{ poema.id }})">Ver más</button>
-        <p id="completo-{{ poema.id }}" style="display:none; white-space: pre-wrap;">
+      <p id="completo-{{ poema.id }}" class="poema_completo" style="display:none;"> <!--  white-space: pre-wrap;-->
         {{ poema.contenido }}
       </p>
+      <button onclick="mostrarPoema({{ poema.id }})">Ver más</button>
       {% endif %}
       <!-- <p>{{poema.contenido}}</p>{{ poema.contenido | e }} -->
     </article>
