@@ -1,0 +1,6 @@
+{% for poema in poemas %}
+<article class="poema">
+  <h2>{{ poema.titulo }}</h2>
+  <p>{{ poema.contenido | replace('\n', '<br>') | safe }}</p>
+</article>
+{% endfor %}

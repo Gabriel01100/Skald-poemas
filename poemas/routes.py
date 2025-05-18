@@ -5,11 +5,13 @@ from .models import agregar_poema, obtener_poemas, eliminar_poema_por_id
 
 bp = Blueprint('poemas', __name__)
 
+#Ruta principal 
 @bp.route('/')
 def index():
     poemas = obtener_poemas()
     return render_template('index.html', poemas=poemas)
 
+#'Mas poemas' Ruta donde van a visualizar todos los poemas disponibles
 @bp.route('/more')
 def more():
     etiqueta_filtro = request.args.get('etiqueta')
@@ -24,6 +26,18 @@ def more():
         poemas = [p for p in poemas if etiqueta_filtro in [e.strip() for e in (p["etiquetas"] or "").split(",")]]
 
     return render_template("more.html", poemas=poemas, etiquetas=sorted(etiquetas))
+
+#Mostrar los poemas sin recargar la pagian
+@bp.route('/filtrar')
+def filtrar():
+    etiqueta = request.args.get('etiqueta')
+    poemas = obtener_poemas()
+
+    if etiqueta:
+        poemas = [p for p in poemas if etiqueta in (p['etiquetas'] or '').split(',')]
+
+    return render_template('fragmentos/poemas.html', poemas=poemas)
+
 
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
