@@ -1,0 +1,16 @@
+# Archivos de base de datos
+*.db
+
+# Entornos virtuales (venv, env, etc.)
+venv/
+env/
+
+# Archivos de configuración sensibles
+*.pyc
+__pycache__/
+instance/
+.env
+
+# Archivos del sistema
+.DS_Store
+*.swp

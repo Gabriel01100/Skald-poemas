@@ -50,3 +50,18 @@
     width: 90%;
   }
 }
+
+
+@media (max-width: 768px) {
+  /* Poemas: de fila a columna */
+  .poemas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .poema {
+    width: 90%;
+    margin: 1rem auto;
+    font-size: 1rem;
+  }
+}

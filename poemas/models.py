@@ -1,9 +1,10 @@
 # poemas/models.py
 import sqlite3
 from datetime import datetime
+from flask import current_app
 
 def conectar_bd():
-    conn = sqlite3.connect("poemas.db")
+    conn = sqlite3.connect(current_app.config['DATABASE'])
     conn.row_factory = sqlite3.Row
     return conn
 
