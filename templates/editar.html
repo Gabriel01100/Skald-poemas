@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h2>Editar poema</h2>
+
+<main class="form_container">
+  <form method="POST" class="form_poema" id="ajax_form_agregar">
+     <label for="titulo">Título:</label><br>
+     <input type="text" class="enviar_poema titulo" id="titulo" value="{{ poema.titulo }}" name="titulo" placeholder="Titulo del poema" required><br><br>
+    
+     <label for="contenido">Contenido:</label><br>
+     <textarea class="contenido enviar_poema" id="contenido" name="contenido" rows="10" placeholder="Exprese el poema" required>{{ poema.contenido }}</textarea><br><br>
+  
+      
+     <label for="etiquetas">Etiquetas (separadas por comas):</label><br>
+     <input placeholder="Etiquetas para filtrado" class="enviar_poema" type="text" id="etiquetas" name="etiquetas" value="{{ poema.etiquetas }}"><br><br>
+  
+     <button class="enviar_poema boton" type="submit">Guardar poema</button>
+  </form>
+</main>
+
+<a class="link" href="{{ url_for('poemas.agregar') }}">← Volver al panel</a>
+{% endblock %}

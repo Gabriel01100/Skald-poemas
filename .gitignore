@@ -4,6 +4,7 @@
 # Entornos virtuales (venv, env, etc.)
 venv/
 env/
+poemasenv
 
 # Archivos de configuración sensibles
 *.pyc
@@ -14,3 +15,7 @@ instance/
 # Archivos del sistema
 .DS_Store
 *.swp
+
+ideas.txt
+
+print(generate_password_hash('contraseñapoemas2025'))
