@@ -1,0 +1,14 @@
+.link_ig{
+    color:#000;
+    text-decoration: none;
+}
+
+
+.container_footer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.container-img-a_link{
+    margin-left: 5px;
+}

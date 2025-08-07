@@ -8,7 +8,7 @@
 <h2>Nuevo poema</h2>
 
 <main class="form_container">
-  <form method="POST" class="form_poema">
+  <form method="POST" class="form_poema" id="ajax_form_agregar">
      <label for="titulo">Título:</label><br>
      <input type="text" class="enviar_poema titulo" id="titulo" name="titulo" placeholder="Titulo del poema" required><br><br>
     
@@ -23,16 +23,19 @@
   </form>
 </main>
 
-<!-- ver Eliminar -->
+<!-- ver Eliminar  Editar-->
 <h2>Poemas Agregados</h2>
 <section class="poemas">
     {% for poema in poemas %}
     <article class="poema">
       <h2>{{ poema.titulo }}</h2>
       <p>{{poema.contenido}}</p>
-      <form action="{{ url_for('eliminar_poema', id=poema.id) }}" method="POST" style="display:inline;">
+      <form action="{{ url_for('poemas.eliminar', id=poema.id) }}" method="POST" style="display:inline;">
         <button type="submit" onclick="return confirm('¿Estás seguro que querés eliminar este poema?')">Eliminar</button>
     </form>
+    <a href="{{ url_for('poemas.editar', id=poema.id) }}">
+      <button type="button">Editar</button>
+    </a>
     </article>
     {% endfor %}
 </section>

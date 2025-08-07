@@ -1,0 +1,21 @@
+# Archivos de base de datos
+*.db
+
+# Entornos virtuales (venv, env, etc.)
+venv/
+env/
+poemasenv
+
+# Archivos de configuración sensibles
+*.pyc
+__pycache__/
+instance/
+.env
+
+# Archivos del sistema
+.DS_Store
+*.swp
+
+ideas.txt
+
+print(generate_password_hash('contraseñapoemas2025'))
