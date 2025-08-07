@@ -52,35 +52,13 @@ def filtrar():
     return render_template('fragmentos/poemas.html', poemas=poemas)
 
 
-'''@bp.route('/login', methods=['GET', 'POST'])
-def login():
-    
-    if request.method == 'POST':
-        usuario = request.form['usuario']
-        contraseña = request.form['contraseña']
-
-        if (
-            usuario == current_app.config['ADMIN_USER'] and
-            check_password_hash(current_app.config['ADMIN_PASSWORD_HASH'], contraseña)
-        ):
-            session['usuario'] = usuario
-            return redirect(url_for('poemas.agregar'))
-        return render_template('login.html', error='Credenciales incorrectas')
-    return render_template('login.html')'''
-
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         usuario = request.form['usuario'].strip()
-        contraseña = request.form['contraseña'].strip()
+        contrasena = request.form['contrasena'].strip()
 
-        print("==== DEBUG LOGIN ====")
-        print("Usuario ingresado:", repr(usuario))
-        print("Contraseña ingresada:", repr(contraseña))
-        print("Usuario esperado:", repr(current_app.config['ADMIN_USER']))
-        print("Hash esperado:", repr(current_app.config['ADMIN_PASSWORD_HASH']))
-        # Test directo:
-        resultado = check_password_hash(current_app.config['ADMIN_PASSWORD_HASH'], contraseña)
+        resultado = check_password_hash(current_app.config['ADMIN_PASSWORD_HASH'], contrasena)
         print("¿Coincide el hash con la contraseña?", resultado)
 
         if usuario == current_app.config['ADMIN_USER'] and resultado:
