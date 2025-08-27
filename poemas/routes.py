@@ -1,3 +1,5 @@
+'''
+
 # poemas/routes.py
 from flask import Blueprint, render_template, request, redirect, url_for, session, current_app
 from datetime import datetime
@@ -138,3 +140,5 @@ def editar(id):
 
 
 
+
+'''

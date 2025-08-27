@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+
+<form method="GET" id="filtro-form" class="form-etiquetas" action="{{ url_for('poemas.more') }}">
+  <label class="etiqueta" for="filtro_etiqueta">Filtrar por etiqueta:</label>
+  <select name="etiqueta" id="filtro_etiqueta">
+    <option value=""> Todas </option>
+    {% for etiqueta in etiquetas %}
+      <option value="{{ etiqueta }}" {% if request.args.get("etiqueta") == etiqueta %}selected{% endif %}>{{ etiqueta }}</option>
+    {% endfor %}
+  </select>
+</form>
+
+<section id="lista-poemas" class="poemas">
+  {% include 'fragmentos/poemas.html' %}
+</section>
+
+<script src="{{url_for('static', filename='JS/more.js')}}"></script>
+{% endblock %}

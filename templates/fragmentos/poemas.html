@@ -2,7 +2,7 @@
 <article class="poema">
   <h2>{{ poema.titulo }}</h2>
 
-  <p id="resumen-{{ poema.id }}">
+  <p id="resumen-{{ poema.id }}" style="white-space: pre-wrap;">
     {{ poema.contenido[:200] }}{% if poema.contenido|length > 200 %}...{% endif %}
   </p>
 
@@ -10,7 +10,7 @@
   <p id="completo-{{ poema.id }}" style="display: none; white-space: pre-wrap;">
     {{ poema.contenido }}
   </p>
-  <button onclick="mostrarPoema({{ poema.id }})" id="btn-{{ poema.id }}">Ver más</button>
+  <button id="btn-{{ poema.id }}" class="btn-ver-mas">Ver más</button>
   {% endif %}
 </article>
 {% endfor %}
