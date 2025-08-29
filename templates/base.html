@@ -4,16 +4,17 @@
     
     {% include "head.html" %}
     <head><link rel="stylesheet" href="{{url_for('static', filename = 'CSS/admin.css')}}"></head>
+    
 </head>
 <body>
     <header>
         <h1>Skald Poemas</h1>
-        
+        <h3 style="font-family: cursive; font-weight: 100;">"Cuando tengo preocupaciones, miedos o una historia de amor, <br>tengo la suerte de ser capaz de transformarlo en un poema"</h3>
         <nav>
             <a href="{{url_for('poemas.index')}}" class="link principal">Inicio</a>
             <a class="link" href="{{url_for('poemas.more')}}">Más poemas</a>
-            <a href="#" class="link">Contácto</a>
-            <a href="#" class="link">Mí libro</a>
+            <a href="{{url_for('poemas.contact')}}" class="link">Contácto</a>
+            <a href="{{url_for('poemas.novels')}}" class="link">Novela</a>
         </nav>
             
     </header>

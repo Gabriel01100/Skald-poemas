@@ -1,6 +1,8 @@
 /* Header */
 body{
-    background-color:#fce6c2;
+    /* background-color:#fce6c2; */
+    background: linear-gradient(135deg, #f8ede3, #f9d5bb, #f6d6ad);
+    min-height: 100vh;
     color: #1e1e1e;
 }
 *{
@@ -12,7 +14,7 @@ body{
 header{
     
     background-image: url('../IMG/sol.jpg');
-    height: 30em;
+    height: 38em;
     flex-direction: column;
     align-items: center;
     gap: 2rem;
@@ -73,6 +75,7 @@ p {
     font-family: 'Baskerville', serif;
     font-style: italic;
 }
+
 
 
 /* MEDIA QUERIES */
