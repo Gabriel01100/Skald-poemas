@@ -75,3 +75,6 @@ def contact():
     return render_template("public/contact.html")
 
 
+@bp.route('/novels')
+def novels():
+    return render_template('public/novels.html')
