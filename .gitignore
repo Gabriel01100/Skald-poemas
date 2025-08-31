@@ -1,0 +1,22 @@
+# Entorno virtual
+poemasenv/
+venv/
+.env
+
+# Archivos compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de base de datos locales
+*.db
+*.sqlite3
+
+# Archivos de configuración o credenciales
+*.env
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
