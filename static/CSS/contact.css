@@ -1,0 +1,35 @@
+.form_contacto {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Georgia', serif;
+  color: #5c3d2e;
+}
+
+.form_contacto label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form_contacto input,
+.form_contacto textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.form_contacto button {
+  background: linear-gradient(90deg, #d6a4a4, #d6b1c4);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}

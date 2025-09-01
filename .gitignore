@@ -2,6 +2,7 @@
 poemasenv/
 venv/
 .env
+env/
 
 # Archivos compilados de Python
 __pycache__/
@@ -12,6 +13,7 @@ __pycache__/
 # Archivos de base de datos locales
 *.db
 *.sqlite3
+*.db
 
 # Archivos de configuración o credenciales
 *.env
@@ -20,3 +22,11 @@ __pycache__/
 # Archivos de sistema
 .DS_Store
 Thumbs.db
+
+
+# Archivos de configuración sensibles
+instance/
+
+# Archivos del sistema
+.DS_Store
+*.swp

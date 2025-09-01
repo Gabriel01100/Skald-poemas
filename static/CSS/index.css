@@ -12,6 +12,8 @@
     justify-content: center;
     flex-wrap: wrap; /* permite que se acomode en móviles */
     padding: 2rem;
+    align-items: flex-start;
+
   }
 
 .poema {
@@ -23,10 +25,9 @@
     border-radius: 8px;
     transition: transform 0.2s ease;
     user-select: none;
+    /* white-space: pre-line; */
 }
-.poema {
-  white-space: pre-line;
-}
+
 .poema:hover {
     transform: scale(1.02);
   }
@@ -44,4 +45,59 @@
     margin-top: 1rem;
     color: #0066cc;
     text-decoration: none;
+}
+
+#filtro-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f8ede3, #f9d5bb);
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#filtro-form label {
+  font-weight: bold;
+  color: #5c3d2e;
+}
+
+#filtro_etiqueta {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffffffcc;
+  font-size: 1rem;
+  color: #5c3d2e;
+  font-family: 'Georgia', serif;
+}
+
+#filtro_etiqueta:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+  .poema {
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Poemas: de fila a columna */
+  .poemas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .poema {
+    width: 90%;
+    margin: 1rem auto;
+    font-size: 1rem;
+  }
 }

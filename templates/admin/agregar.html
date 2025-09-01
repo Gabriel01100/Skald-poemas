@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+
+{% block titulo %}Agregar poema{% endblock %}
+
+
+{% block contenido %}
+<h2>Nuevo poema</h2>
+
+<main class="form_container">
+  <form method="POST" class="form_poema" id="ajax_form_agregar">
+     <label for="titulo">Título:</label><br>
+     <input type="text" class="enviar_poema titulo" id="titulo" name="titulo" placeholder="Titulo del poema" required><br><br>
+    
+     <label for="contenido">Contenido:</label><br>
+     <textarea class="contenido enviar_poema" id="contenido" name="contenido" rows="10" placeholder="Exprese el poema" required> </textarea><br><br>
+  
+      
+     <label for="etiquetas">Etiquetas (separadas por comas):</label><br>
+     <input placeholder="Etiquetas para filtrado" class="enviar_poema" type="text" id="etiquetas" name="etiquetas"><br><br>
+  
+     <button class="enviar_poema boton" type="submit">Guardar poema</button>
+  </form>
+</main>
+
+<!-- ver Eliminar  Editar-->
+<!-- <h2>Poemas Agregados</h2>
+<section class="poemas">
+    {% for poema in poemas %}
+    <article class="poema">
+      <h2>{{ poema.titulo }}</h2>
+      <p>{{poema.contenido}}</p>
+      <form action="{{ url_for('poemas.eliminar', id=poema.id) }}" method="POST" style="display:inline;">
+        <button type="submit" onclick="return confirm('¿Estás seguro que querés eliminar este poema?')">Eliminar</button>
+    </form>
+    <a href="{{ url_for('poemas.editar', id=poema.id) }}">
+      <button type="button">Editar</button>
+    </a>
+    </article>
+    {% endfor %}
+</section> -->
+
+<h2>Poemas Agregados</h2>
+
+<section id="lista-poemas-admin" class="poemas">
+  {% for poema in poemas %}
+  <article class="poema">
+    <h2>{{ poema.titulo }}</h2>
+
+    <!-- Resumen -->
+    <p id="resumen-{{ poema.id }}" style="white-space: pre-wrap;">
+      {{ poema.contenido[:200] }}{% if poema.contenido|length > 200 %}...{% endif %}
+    </p>
+
+    <!-- Contenido completo oculto -->
+    {% if poema.contenido|length > 200 %}
+    <p id="completo-{{ poema.id }}" style="display:none; white-space: pre-wrap;">
+      {{ poema.contenido }}
+    </p>
+    <button class="btn-ver-mas" data-id="{{ poema.id }}" id="btn-{{ poema.id }}">Ver más</button>
+    {% endif %}
+
+    <!-- Botones de admin: eliminar y editar -->
+    <div class="admin-actions" style="margin-top: .5rem;">
+      <form action="{{ url_for('poemas.eliminar', id=poema.id) }}" method="POST" style="display:inline;">
+        <button type="submit" onclick="return confirm('¿Estás seguro que querés eliminar este poema?')">Eliminar</button>
+      </form>
+
+      <a href="{{ url_for('poemas.editar', id=poema.id) }}">
+        <button type="button">Editar</button>
+      </a>
+    </div>
+  </article>
+  {% endfor %}
+</section>
+<script src="{{ url_for('static', filename='JS/more.js') }}"></script>
+
+
+{% endblock %}

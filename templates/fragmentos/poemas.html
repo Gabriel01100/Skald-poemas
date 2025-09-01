@@ -1,0 +1,16 @@
+{% for poema in poemas %}
+<article class="poema">
+  <h2>{{ poema.titulo }}</h2>
+
+  <p id="resumen-{{ poema.id }}" style="white-space: pre-wrap;">
+    {{ poema.contenido[:200] }}{% if poema.contenido|length > 200 %}...{% endif %}
+  </p>
+
+  {% if poema.contenido|length > 200 %}
+  <p id="completo-{{ poema.id }}" style="display: none; white-space: pre-wrap;">
+    {{ poema.contenido }}
+  </p>
+  <button id="btn-{{ poema.id }}" class="btn-ver-mas">Ver más</button>
+  {% endif %}
+</article>
+{% endfor %}
